@@ -26,4 +26,24 @@ OBS: toda vez que for criar um component use "rafce" vai ajudar muito kkkkkkkkkk
 
 
 
-- npm install axios  react-router-dom
+- npm install axios  react-router-dom jh
+
+
+backend
+
+1- npm init -y
+
+  1.1- adicionar no "packge.json" ----- "type": "module",
+
+2- npm i express
+
+3- criar um aquivo index.js na pasta backend
+  3.1- substuir o script no packge.json por:
+    "scripts": {
+    "dev": "node --watch ./index.js"
+  }
+
+4- npm i dotenv
+  4.1 criar um aquivo na pasta backend com o nome .env (para rodar suas  próprias variaveis no backend)
+
+5- npm install bcryptjs (para criptar a senha)
