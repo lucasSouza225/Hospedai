@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Login from "./pages/Login"
 import axios from "axios"
 import { useEffect, useState } from 'react';
+import Account from "./pages/Account"
+import { UserContext } from "./contexts/UserContext"
 
 
 axios.defaults.baseURL = import.meta.env.VITE_AXIOS_BASE_URL;
@@ -15,29 +17,32 @@ function App() {
   const [user, setUser] = useState(null)
 
   useEffect(() => {
-  const axiosGet = async () => {
-    try {
-      const { data } = await axios.get("/users/profile")
-      console.log("PROFILE:", data)
-      setUser(data) 
-    } catch (error) {
-      console.log("ERRO PROFILE:", error.response?.data)
+    const axiosGet = async () => {
+      try {
+        const { data } = await axios.get("/users/profile")
+        console.log("PROFILE:", data)
+        setUser(data)
+      } catch (error) {
+        console.log("ERRO PROFILE:", error.response?.data)
+      }
     }
-  }
 
-  axiosGet()
-}, [])
+    axiosGet()
+  }, [])
 
   return (
-    <BrowserRouter>
-      <Header user={user} />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login user={user} setUser={setUser} />} />
-        <Route path="/register" element={<Register setUser={setUser} />} />
+    <UserContext.Provider value={{user, setUser}}>
+      <BrowserRouter>
+        <Header user={user} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login user={user} setUser={setUser} />} />
+          <Route path="/register" element={<Register setUser={setUser} />} />
+          <Route path="/account/:subpage/:action?" element={<Account />} />
 
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </UserContext.Provider>
 
   )
 }
