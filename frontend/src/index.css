@@ -1,32 +1,33 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary-400: hsl(349, 100%, 61%);
-  --color-primary-500: hsl(349, 100%, 51%);
-  --color-primary-600: hsl(349, 100%, 41%);
-  --color-primary-700: hsl(349, 100%, 36%);
-  --color-primary-800: hsl(349, 100%, 31%);
-  --color-primary-900: hsl(349, 100%, 26%);
-  --color-primary-950: hsl(349, 100%, 21%);
+  /* 🔵 Azul Hospedaí (primária) */
+  --color-primary-400: #42A5F5;
+  --color-primary-500: #1E88E5;
+  --color-primary-600: #1565C0;
 
-  --color-primary: var(--color-primary-400);
+  /* 🟢 Verde Aconchego (secundária) */
+  --color-secondary-400: #58D68D;
+  --color-secondary-500: #2ECC71;
+  --color-secondary-600: #27AE60;
 
+  /* 🟠 Laranja Casa (destaque) */
+  --color-accent-400: #F8C471;
+  --color-accent-500: #F39C12;
+  --color-accent-600: #D68910;
+
+  /* ⚪ Neutros */
+  --color-background: #FFFFFF;
+  --color-surface: #F4F6F8;
+  --color-text: #2C3E50;
+
+  /* 🔤 Fonte (estilo Airbnb) */
   --font-hashbnb:
-    Airbnb Cereal VF, Circular, -apple-system, BlinkMacSystemFont, Roboto,
-    Helvetica Neue, sans-serif;
-}
-
-@layer apply {
-  input:not([type="date"]) {
-    @apply rounded-full border border-gray-300 px-4 py-2;
-  }
-
-  textarea {
-    @apply resize-none rounded-3xl border border-gray-300 px-4 py-2;
-  }
-
-  button,
-  .button {
-    @apply cursor-pointer border border-gray-300 px-4 py-2 font-bold transition;
-  }
+    Airbnb Cereal VF,
+    Circular,
+    -apple-system,
+    BlinkMacSystemFont,
+    Roboto,
+    Helvetica Neue,
+    sans-serif;
 }

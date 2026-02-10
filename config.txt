@@ -52,3 +52,6 @@ backend
 5- npm install bcryptjs (para criptar a senha)
 
 6- npm i cookie-parser 
+
+7- npm i image-downloader
+  7.1 - npm i image-downloader mime-type
